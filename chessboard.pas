@@ -1,12 +1,12 @@
-{$LIBRARYPATH lib} 
+{$LIBRARYPATH lib}
 program chessboard;
 
 uses crt, chessgui;
 
-begin  
-  drawBoard(0); 
+begin
+  drawBoard(0);
   ReadKey;
 
   drawBoard($ff);
-  ReadKey;  
+  ReadKey;
 end.
