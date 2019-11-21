@@ -58,12 +58,10 @@ begin
     p1[0]:= chr(%00000001); Inc(p1, 40);
     p2[0]:= chr(%10000000); Inc(p2, 40);
   end;
-  p1 := pointer(bmpAdr);
-  p2 := pointer(bmpAdr + 6120); // 19*8*40 + 40
-  for i0b := 1 to 24 do begin
-    p1[i0b] := #$ff;
-    p2[i0b] := #$ff;
-  end;
+  p1 := pointer(bmpAdr + 1);
+  p2 := pointer(bmpAdr + 6120 + 1); // 19*8*40 + 40
+  FillChar(p1, 24, #$ff);
+  FillChar(p2, 24, #$ff);
 end;
 
 {* Then side = $0 draw white side; $ff draw black side *}
